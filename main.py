@@ -166,3 +166,49 @@ def main():
                         else:
                             print("Public email           : " +
                                   infos["public_email"])
+
+   if "public_phone_number" in infos.keys():
+                    if str(infos["public_phone_number"]) != '':
+                        if(phone != ' ' and str(infos["public_phone_number"]).split()[0] == phone.split()[0] and str(infos["public_phone_number"])[-2:] == phone[-2:]):
+                            print(Fore.GREEN + "Public phone number    : " +
+                                  str(infos["public_phone_number"]) + " \u2713")
+                            phone_f = 1
+                        else:
+                            print("Public phone    : " +
+                                  str(infos["public_phone_number"]))
+
+                other_infos = advanced_lookup(account[1:])
+                if other_infos["error"] == "rate limit":
+                    print("Rate limit please wait a few minutes before you try again")
+                elif "message" in other_infos["user"].keys():
+                    if other_infos["user"]["message"] == "No users found":
+                        print("The lookup did not work on this account")
+                    else:
+                        sys.exit(
+                            Fore.RED + "Rate limit! Please, wait a few minutes before running the script again.")
+                else:
+                    if "obfuscated_email" in other_infos["user"].keys():
+                        if other_infos["user"]["obfuscated_email"] != '':
+                            if(email != ' ' and other_infos["user"]["obfuscated_email"][0] == email[0] and other_infos["user"]["obfuscated_email"][8] == email.split('@')[0][-1]
+                                    and other_infos["user"]["obfuscated_email"].split('@')[1] == email.split('@')[1]):
+                                print(Fore.GREEN + "Obfuscated email       : " +
+                                      other_infos["user"]["obfuscated_email"] + " \u2713")
+                                email_f = 1
+                            else:
+                                print("Obfuscated email       : " +
+                                      other_infos["user"]["obfuscated_email"])
+
+                        else:
+                            print("No obfuscated email found")
+
+                    if "obfuscated_phone" in other_infos["user"].keys():
+                        if str(other_infos["user"]["obfuscated_phone"]) != '':
+                            if(phone != ' ' and str(other_infos["user"]["obfuscated_phone"].split()[0]) == phone.split()[0] and str(other_infos["user"]["obfuscated_phone"])[-2:] == phone[-2:]):
+                                print(Fore.GREEN + "Obfuscated phone       : " +
+                                      str(other_infos["user"]["obfuscated_phone"]) + " \u2713")
+                                phone_f = 1
+                            else:
+                                print("Obfuscated phone       : " +
+                                      str(other_infos["user"]["obfuscated_phone"]))
+                        else:
+                            print("No obfuscated phone found")
