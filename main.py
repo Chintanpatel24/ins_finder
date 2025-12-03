@@ -212,3 +212,32 @@ def main():
                                       str(other_infos["user"]["obfuscated_phone"]))
                         else:
                             print("No obfuscated phone found")
+
+  print("Profile Picture        : " +
+                      infos["hd_profile_pic_url_info"]["url"] + "\n")
+
+            if(name_f + email_f + phone_f == 3):
+                print(Fore.CYAN + "[*] " + Fore.GREEN + "Profile ID " +
+                      infos["userID"] + " match level: HIGH\n")
+                usr_choice = input("Stop searching? Y/n ")
+                if(usr_choice.lower() == 'y'):
+                    sys.exit(0)
+                else:
+                    pass
+
+            elif(name_f + email_f + phone_f == 2):
+                print(Fore.CYAN + "[*] " + Fore.YELLOW + "Profile ID " +
+                      infos["userID"] + " match level: MEDIUM\n")
+
+            elif(name_f + email_f + phone_f == 1):
+                print(Fore.CYAN + "[*] " + Fore.RED + "Profile with ID " +
+                      infos["userID"] + " match level: LOW\n")
+
+            print("-"*30)
+
+            if(timeout):
+                time.sleep(int(timeout))
+
+
+if __name__ == "__main__":
+    main()
