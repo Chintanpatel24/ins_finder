@@ -37,3 +37,17 @@ def getUserId(username, sessionsId):
     except:
         return({"id": None, "error": "User not found or rate limit"})
 
+
+def getInfo(username, sessionId):
+    userId = getUserId(username, sessionId)
+    if userId["error"] != None:
+        return({"user": None, "error": "User not found or rate limit"})
+    else:
+        cookies = {'sessionid': sessionId}
+        headers = {'User-Agent': 'Instagram 64.0.0.14.96', }
+        response = get('https://i.instagram.com/api/v1/users/' +
+                       userId["id"]+'/info/', headers=headers, cookies=cookies)
+        info = json.loads(response.text)
+        infoUser = info["user"]
+        infoUser["userID"] = userId["id"]
+        return({"user": infoUser, "error": None})
