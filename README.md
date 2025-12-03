@@ -13,8 +13,8 @@ Leveraging dumpor.com indexing capabilities, it retrieves all usernames associat
 
 # ⚙️ Installation
 ```console
-eva@paradise:~$ git clone https://github.com/blackeko/yesitsme/
-eva@paradise:~$ cd yesitsme
+eva@paradise:~$ git clone https://github.com/Chintan-patel-24/ins_finder/
+eva@paradise:~$ cd ins_finder
 eva@paradise:~$ pip3 install -r requirements.txt
 eva@paradise:~$ python3 yesitsme.py -s SESSION_ID -n NAME -e EMAIL -p PHONE -t TIMEOUT 
 ```
@@ -60,5 +60,3 @@ While logged in your Instagram account:
   3. Expand the Cookies menu and check "sessionid" cookie.
 
 <img src="https://github.com/blackeko/yesitsme/blob/media/screenshot_2.png">
-
-
