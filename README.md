@@ -10,7 +10,6 @@
 Leveraging dumpor.com indexing capabilities, it retrieves all usernames associated with a certain name and automatically compares the fetched toutatis obfuscated e-mail/phone with the given one, saving time and energy while doing online investigations.  
 
 
-
 # ⚙️ Installation
 ```console
 eva@paradise:~$ git clone https://github.com/Chintan-patel-24/ins_finder/
