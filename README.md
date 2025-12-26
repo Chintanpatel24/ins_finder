@@ -59,4 +59,3 @@ While logged in your Instagram account:
   3. Expand the Cookies menu and check "sessionid" cookie.
 
 <img src="https://github.com/blackeko/yesitsme/blob/media/screenshot_2.png">
-
