@@ -6,7 +6,7 @@
 
 
 # 💬 Description
-**yesitsme** is a simple Python script which tries to find Instagram account associated with a specific name, e-mail and phone number.
+**i** is a simple Python script which tries to find Instagram account associated with a specific name, e-mail and phone number.
 Leveraging dumpor.com indexing capabilities, it retrieves all usernames associated with a certain name and automatically compares the fetched toutatis obfuscated e-mail/phone with the given one, saving time and energy while doing online investigations.  
 
 
@@ -56,5 +56,3 @@ While logged in your Instagram account:
   1. Right-click and click on Inspect Element to open the developer console;
   2. Go to the Storage tab;
   3. Expand the Cookies menu and check "sessionid" cookie.
-
-<img src="https://github.com/blackeko/yesitsme/blob/media/screenshot_2.png">
